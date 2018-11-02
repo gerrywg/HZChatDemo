@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		237C4366218B5723004DD42F /* HZChatViewController+ChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C4365218B5723004DD42F /* HZChatViewController+ChatInputView.m */; };
+		5731E0C8218C32C400C8CCB5 /* HZChatMessageTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731E0C7218C32C400C8CCB5 /* HZChatMessageTVCell.m */; };
+		5731E0CB218C357300C8CCB5 /* HZChatTextMessageTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731E0CA218C357300C8CCB5 /* HZChatTextMessageTVCell.m */; };
+		5731E0CF218C41A200C8CCB5 /* HZChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731E0CE218C41A200C8CCB5 /* HZChatManager.m */; };
+		5731E0D2218C434300C8CCB5 /* HZChatBaseMessageTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731E0D1218C434300C8CCB5 /* HZChatBaseMessageTVCell.m */; };
 		57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */; };
 		57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E80218AB1BA00AA6FEB /* ViewController.m */; };
 		57E87E84218AB1BA00AA6FEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E87E82218AB1BA00AA6FEB /* Main.storyboard */; };
@@ -28,6 +32,14 @@
 		237C4364218B5723004DD42F /* HZChatViewController+ChatInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+ChatInputView.h"; sourceTree = "<group>"; };
 		237C4365218B5723004DD42F /* HZChatViewController+ChatInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+ChatInputView.m"; sourceTree = "<group>"; };
 		274E4A0A141C69C6A5E65C4A /* libPods-HZChatDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HZChatDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5731E0C6218C32C400C8CCB5 /* HZChatMessageTVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatMessageTVCell.h; sourceTree = "<group>"; };
+		5731E0C7218C32C400C8CCB5 /* HZChatMessageTVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatMessageTVCell.m; sourceTree = "<group>"; };
+		5731E0C9218C357300C8CCB5 /* HZChatTextMessageTVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatTextMessageTVCell.h; sourceTree = "<group>"; };
+		5731E0CA218C357300C8CCB5 /* HZChatTextMessageTVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatTextMessageTVCell.m; sourceTree = "<group>"; };
+		5731E0CD218C41A200C8CCB5 /* HZChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatManager.h; sourceTree = "<group>"; };
+		5731E0CE218C41A200C8CCB5 /* HZChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatManager.m; sourceTree = "<group>"; };
+		5731E0D0218C434300C8CCB5 /* HZChatBaseMessageTVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatBaseMessageTVCell.h; sourceTree = "<group>"; };
+		5731E0D1218C434300C8CCB5 /* HZChatBaseMessageTVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatBaseMessageTVCell.m; sourceTree = "<group>"; };
 		57E87E79218AB1BA00AA6FEB /* HZChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E87E7C218AB1BA00AA6FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +85,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5731E0CC218C405D00C8CCB5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5731E0CD218C41A200C8CCB5 /* HZChatManager.h */,
+				5731E0CE218C41A200C8CCB5 /* HZChatManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		57E87E70218AB1BA00AA6FEB = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +115,7 @@
 		57E87E7B218AB1BA00AA6FEB /* HZChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5731E0CC218C405D00C8CCB5 /* Managers */,
 				57E87E92218AD4F800AA6FEB /* Main */,
 				57E87E7C218AB1BA00AA6FEB /* AppDelegate.h */,
 				57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */,
@@ -164,6 +186,12 @@
 			children = (
 				57E87E9E218AD82400AA6FEB /* HZChatInputView.h */,
 				57E87E9F218AD82400AA6FEB /* HZChatInputView.m */,
+				5731E0C6218C32C400C8CCB5 /* HZChatMessageTVCell.h */,
+				5731E0C7218C32C400C8CCB5 /* HZChatMessageTVCell.m */,
+				5731E0D0218C434300C8CCB5 /* HZChatBaseMessageTVCell.h */,
+				5731E0D1218C434300C8CCB5 /* HZChatBaseMessageTVCell.m */,
+				5731E0C9218C357300C8CCB5 /* HZChatTextMessageTVCell.h */,
+				5731E0CA218C357300C8CCB5 /* HZChatTextMessageTVCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,10 +298,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */,
+				5731E0D2218C434300C8CCB5 /* HZChatBaseMessageTVCell.m in Sources */,
 				237C4366218B5723004DD42F /* HZChatViewController+ChatInputView.m in Sources */,
+				5731E0CB218C357300C8CCB5 /* HZChatTextMessageTVCell.m in Sources */,
 				57E87E97218AD5C400AA6FEB /* HZBaseViewController.m in Sources */,
 				57E87E8C218AB1BD00AA6FEB /* main.m in Sources */,
+				5731E0C8218C32C400C8CCB5 /* HZChatMessageTVCell.m in Sources */,
 				57E87EA0218AD82400AA6FEB /* HZChatInputView.m in Sources */,
+				5731E0CF218C41A200C8CCB5 /* HZChatManager.m in Sources */,
 				57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */,
 				57E87EA5218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m in Sources */,
 				57E87EA8218B095C00AA6FEB /* HZChatViewController+ChatTableView.m in Sources */,

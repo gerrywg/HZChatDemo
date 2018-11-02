@@ -38,6 +38,11 @@ static CGFloat const buttonHeight   = 28.0;
     return self;
 }
 
+- (void)dealloc {
+    
+    [self.textView removeObserver:self forKeyPath:@"contentSize"];
+}
+
 - (void)setupUI {
     
     //add subviews
@@ -65,7 +70,7 @@ static CGFloat const buttonHeight   = 28.0;
     __weak typeof (self) weakSelf = self;
     
     [self.voiceButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf).with.offset(innerPadding);
+        make.left.equalTo(weakSelf).with.offset(leftPadding);
         make.bottom.equalTo(weakSelf).with.offset(-bottomPadding);
         make.height.equalTo(@(buttonHeight));
         make.width.equalTo(weakSelf.voiceButton.mas_height);

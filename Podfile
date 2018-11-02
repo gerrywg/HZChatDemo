@@ -7,5 +7,6 @@ target 'HZChatDemo' do
 
   # Pods for HZChatDemo
 pod 'Masonry'
+Pod 'YYModel'
   
 end
