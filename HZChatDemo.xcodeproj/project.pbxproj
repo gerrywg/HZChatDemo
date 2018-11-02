@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		237C4366218B5723004DD42F /* HZChatViewController+ChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C4365218B5723004DD42F /* HZChatViewController+ChatInputView.m */; };
+		57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */; };
+		57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E80218AB1BA00AA6FEB /* ViewController.m */; };
+		57E87E84218AB1BA00AA6FEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E87E82218AB1BA00AA6FEB /* Main.storyboard */; };
+		57E87E86218AB1BD00AA6FEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E87E85218AB1BD00AA6FEB /* Assets.xcassets */; };
+		57E87E89218AB1BD00AA6FEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E87E87218AB1BD00AA6FEB /* LaunchScreen.storyboard */; };
+		57E87E8C218AB1BD00AA6FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E8B218AB1BD00AA6FEB /* main.m */; };
+		57E87E97218AD5C400AA6FEB /* HZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E96218AD5C400AA6FEB /* HZBaseViewController.m */; };
+		57E87E9D218AD63500AA6FEB /* HZChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E9C218AD63500AA6FEB /* HZChatViewController.m */; };
+		57E87EA0218AD82400AA6FEB /* HZChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E9F218AD82400AA6FEB /* HZChatInputView.m */; };
+		57E87EA2218AE86700AA6FEB /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E87EA1218AE86700AA6FEB /* Chat.xcassets */; };
+		57E87EA5218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87EA4218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m */; };
+		57E87EA8218B095C00AA6FEB /* HZChatViewController+ChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87EA7218B095C00AA6FEB /* HZChatViewController+ChatTableView.m */; };
+		7CD152AE5B70A98A85F5A710 /* libPods-HZChatDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E4A0A141C69C6A5E65C4A /* libPods-HZChatDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A3E631EB1110AA955DA456A /* Pods-HZChatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZChatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZChatDemo/Pods-HZChatDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		237C4364218B5723004DD42F /* HZChatViewController+ChatInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+ChatInputView.h"; sourceTree = "<group>"; };
+		237C4365218B5723004DD42F /* HZChatViewController+ChatInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+ChatInputView.m"; sourceTree = "<group>"; };
+		274E4A0A141C69C6A5E65C4A /* libPods-HZChatDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HZChatDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57E87E79218AB1BA00AA6FEB /* HZChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57E87E7C218AB1BA00AA6FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		57E87E7F218AB1BA00AA6FEB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		57E87E80218AB1BA00AA6FEB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		57E87E83218AB1BA00AA6FEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		57E87E85218AB1BD00AA6FEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57E87E88218AB1BD00AA6FEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57E87E8A218AB1BD00AA6FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E87E8B218AB1BD00AA6FEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57E87E95218AD5C400AA6FEB /* HZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseViewController.h; sourceTree = "<group>"; };
+		57E87E96218AD5C400AA6FEB /* HZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseViewController.m; sourceTree = "<group>"; };
+		57E87E9B218AD63500AA6FEB /* HZChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatViewController.h; sourceTree = "<group>"; };
+		57E87E9C218AD63500AA6FEB /* HZChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatViewController.m; sourceTree = "<group>"; };
+		57E87E9E218AD82400AA6FEB /* HZChatInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZChatInputView.h; sourceTree = "<group>"; };
+		57E87E9F218AD82400AA6FEB /* HZChatInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZChatInputView.m; sourceTree = "<group>"; };
+		57E87EA1218AE86700AA6FEB /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Chat.xcassets; sourceTree = "<group>"; };
+		57E87EA3218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+KeyboardEvent.h"; sourceTree = "<group>"; };
+		57E87EA4218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+KeyboardEvent.m"; sourceTree = "<group>"; };
+		57E87EA6218B095C00AA6FEB /* HZChatViewController+ChatTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+ChatTableView.h"; sourceTree = "<group>"; };
+		57E87EA7218B095C00AA6FEB /* HZChatViewController+ChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+ChatTableView.m"; sourceTree = "<group>"; };
+		9E56D7516701A2E4BD8F9C10 /* Pods-HZChatDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZChatDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZChatDemo/Pods-HZChatDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57E87E76218AB1BA00AA6FEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CD152AE5B70A98A85F5A710 /* libPods-HZChatDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32FA0E49A1601A07EA6D144D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E631EB1110AA955DA456A /* Pods-HZChatDemo.debug.xcconfig */,
+				9E56D7516701A2E4BD8F9C10 /* Pods-HZChatDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		57E87E70218AB1BA00AA6FEB = {
+			isa = PBXGroup;
+			children = (
+				57E87E7B218AB1BA00AA6FEB /* HZChatDemo */,
+				57E87E7A218AB1BA00AA6FEB /* Products */,
+				32FA0E49A1601A07EA6D144D /* Pods */,
+				DCC1A4FF7DE5F52577FDA3EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		57E87E7A218AB1BA00AA6FEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E79218AB1BA00AA6FEB /* HZChatDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57E87E7B218AB1BA00AA6FEB /* HZChatDemo */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E92218AD4F800AA6FEB /* Main */,
+				57E87E7C218AB1BA00AA6FEB /* AppDelegate.h */,
+				57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */,
+				57E87E7F218AB1BA00AA6FEB /* ViewController.h */,
+				57E87E80218AB1BA00AA6FEB /* ViewController.m */,
+				57E87E82218AB1BA00AA6FEB /* Main.storyboard */,
+				57E87E85218AB1BD00AA6FEB /* Assets.xcassets */,
+				57E87EA1218AE86700AA6FEB /* Chat.xcassets */,
+				57E87E87218AB1BD00AA6FEB /* LaunchScreen.storyboard */,
+				57E87E8A218AB1BD00AA6FEB /* Info.plist */,
+				57E87E8B218AB1BD00AA6FEB /* main.m */,
+			);
+			path = HZChatDemo;
+			sourceTree = "<group>";
+		};
+		57E87E92218AD4F800AA6FEB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E94218AD55400AA6FEB /* Base */,
+				57E87E93218AD50600AA6FEB /* Chat */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		57E87E93218AD50600AA6FEB /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E98218AD5E500AA6FEB /* Controller */,
+				57E87E99218AD5F000AA6FEB /* Model */,
+				57E87E9A218AD60100AA6FEB /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		57E87E94218AD55400AA6FEB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E95218AD5C400AA6FEB /* HZBaseViewController.h */,
+				57E87E96218AD5C400AA6FEB /* HZBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		57E87E98218AD5E500AA6FEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E9B218AD63500AA6FEB /* HZChatViewController.h */,
+				57E87E9C218AD63500AA6FEB /* HZChatViewController.m */,
+				57E87EA3218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.h */,
+				57E87EA4218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m */,
+				57E87EA6218B095C00AA6FEB /* HZChatViewController+ChatTableView.h */,
+				57E87EA7218B095C00AA6FEB /* HZChatViewController+ChatTableView.m */,
+				237C4364218B5723004DD42F /* HZChatViewController+ChatInputView.h */,
+				237C4365218B5723004DD42F /* HZChatViewController+ChatInputView.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57E87E99218AD5F000AA6FEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57E87E9A218AD60100AA6FEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57E87E9E218AD82400AA6FEB /* HZChatInputView.h */,
+				57E87E9F218AD82400AA6FEB /* HZChatInputView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCC1A4FF7DE5F52577FDA3EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				274E4A0A141C69C6A5E65C4A /* libPods-HZChatDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57E87E78218AB1BA00AA6FEB /* HZChatDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57E87E8F218AB1BD00AA6FEB /* Build configuration list for PBXNativeTarget "HZChatDemo" */;
+			buildPhases = (
+				AF34ADDCC0767E7EA0E812B8 /* [CP] Check Pods Manifest.lock */,
+				57E87E75218AB1BA00AA6FEB /* Sources */,
+				57E87E76218AB1BA00AA6FEB /* Frameworks */,
+				57E87E77218AB1BA00AA6FEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HZChatDemo;
+			productName = HZChatDemo;
+			productReference = 57E87E79218AB1BA00AA6FEB /* HZChatDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57E87E71218AB1BA00AA6FEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = o888;
+				TargetAttributes = {
+					57E87E78218AB1BA00AA6FEB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 57E87E74218AB1BA00AA6FEB /* Build configuration list for PBXProject "HZChatDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57E87E70218AB1BA00AA6FEB;
+			productRefGroup = 57E87E7A218AB1BA00AA6FEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57E87E78218AB1BA00AA6FEB /* HZChatDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57E87E77218AB1BA00AA6FEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57E87E89218AB1BD00AA6FEB /* LaunchScreen.storyboard in Resources */,
+				57E87EA2218AE86700AA6FEB /* Chat.xcassets in Resources */,
+				57E87E86218AB1BD00AA6FEB /* Assets.xcassets in Resources */,
+				57E87E84218AB1BA00AA6FEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF34ADDCC0767E7EA0E812B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HZChatDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57E87E75218AB1BA00AA6FEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */,
+				237C4366218B5723004DD42F /* HZChatViewController+ChatInputView.m in Sources */,
+				57E87E97218AD5C400AA6FEB /* HZBaseViewController.m in Sources */,
+				57E87E8C218AB1BD00AA6FEB /* main.m in Sources */,
+				57E87EA0218AD82400AA6FEB /* HZChatInputView.m in Sources */,
+				57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */,
+				57E87EA5218AF82300AA6FEB /* HZChatViewController+KeyboardEvent.m in Sources */,
+				57E87EA8218B095C00AA6FEB /* HZChatViewController+ChatTableView.m in Sources */,
+				57E87E9D218AD63500AA6FEB /* HZChatViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		57E87E82218AB1BA00AA6FEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57E87E83218AB1BA00AA6FEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		57E87E87218AB1BD00AA6FEB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57E87E88218AB1BD00AA6FEB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57E87E8D218AB1BD00AA6FEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		57E87E8E218AB1BD00AA6FEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57E87E90218AB1BD00AA6FEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A3E631EB1110AA955DA456A /* Pods-HZChatDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UU7PMQ4GPH;
+				INFOPLIST_FILE = HZChatDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hz.HZChatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57E87E91218AB1BD00AA6FEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E56D7516701A2E4BD8F9C10 /* Pods-HZChatDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UU7PMQ4GPH;
+				INFOPLIST_FILE = HZChatDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hz.HZChatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57E87E74218AB1BA00AA6FEB /* Build configuration list for PBXProject "HZChatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57E87E8D218AB1BD00AA6FEB /* Debug */,
+				57E87E8E218AB1BD00AA6FEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57E87E8F218AB1BD00AA6FEB /* Build configuration list for PBXNativeTarget "HZChatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57E87E90218AB1BD00AA6FEB /* Debug */,
+				57E87E91218AB1BD00AA6FEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57E87E71218AB1BA00AA6FEB /* Project object */;
+}
