@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HZChatBaseMessageTVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HZChatMessageTVCell : UITableViewCell
+@interface HZChatMessageTVCell : HZChatBaseMessageTVCell
 
+@property (strong, nonatomic) UIButton  *avatarButton;
+@property (strong, nonatomic) UILabel   *dateLabel;
+@property (strong, nonatomic) UIView    *mediaContentView;
 
+@property (assign, nonatomic, readonly) CGFloat safeMediaContentMarginToBorder;
 
 @end
 

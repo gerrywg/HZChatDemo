@@ -2,18 +2,12 @@
 //  HZChatTextMessageTVCell.m
 //  HZChatDemo
 //
-//  Created by o888 on 2018/11/2.
+//  Created by Gang Wang on 2018/11/4.
 //  Copyright © 2018 o888. All rights reserved.
 //
 
 #import "HZChatTextMessageTVCell.h"
-
-@interface HZChatTextMessageTVCell ()
-
-@property (strong, nonatomic) UIButton  *mediaContentButton;
-@property (strong, nonatomic) UILabel   *textMessageLabel;
-
-@end
+#import <Masonry.h>
 
 @implementation HZChatTextMessageTVCell
 
@@ -26,17 +20,48 @@
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
-        HZChatCellContentType contentType = [self.chatCellContentTypeDelegate hz_chatCellContentTypeWithReuseIdentifier:reuseIdentifier];
-        
-        [self setupUIWithHZChatCellContentType:contentType];
+        [self setupUI];
     }
     
     return self;
 }
 
-- (void)setupUIWithHZChatCellContentType:(HZChatCellContentType)contentType {
-    
++ (BOOL)requiresConstraintBasedLayout {
+    return YES;
 }
+
+- (void)updateConstraints{
+    
+    __weak typeof (self) weakSelf = self;
+    
+    [self.textMessageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+
+        make.edges.equalTo(weakSelf.mediaContentView);
+    }];
+    
+    [super updateConstraints];
+}
+
+- (void)setupUI {
+    
+    [self.mediaContentView addSubview:self.textMessageLabel];
+}
+
+- (UILabel *)textMessageLabel {
+    
+    if (!_textMessageLabel) {
+        _textMessageLabel = ({
+            
+            UILabel *label = [UILabel new];
+            [label setNumberOfLines:0];
+            
+            label;
+        });
+    }
+    
+    return _textMessageLabel;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

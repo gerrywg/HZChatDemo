@@ -15,15 +15,13 @@
     // Initialization code
 }
 
-- (UIButton *)avatarButton {
-    if (!_avatarButton) {
-        _avatarButton = ({
-            UIButton *button = [UIButton new];
-            
-            button;
-        });
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
     }
-    return _avatarButton;
+    
+    return self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

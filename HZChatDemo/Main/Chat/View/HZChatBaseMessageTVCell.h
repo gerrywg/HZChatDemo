@@ -10,15 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, HZChatCellContentType) {
-    HZChatCellContentTypeCustom = -1,      /* 自定义 */
-    HZChatCellContentTypeText,             /* 文字 */
-    HZChatCellContentTypeImage,            /* 图片 */
-    HZChatCellContentTypeVoice,            /* 语音 */
-    HZChatCellContentTypeShareInfo,        /* 分享类型, 就是有图片, title, 文字 和跳转链接 */
-    HZChatCellContentTypeMap               /* 地图类型 */
-};
-
 typedef NS_ENUM(NSUInteger, HZChatCellSide) {
     HZChatCellSideMySide,
     HZChatCellSideOtherSide
@@ -28,7 +19,7 @@ typedef NS_ENUM(NSUInteger, HZChatCellSide) {
 
 - (HZChatCellSide) hz_chatCellSideWithReuseIdentifier:(NSString *)reuseIdentifier;
 
-- (HZChatCellContentType) hz_chatCellContentTypeWithReuseIdentifier:(NSString *)reuseIdentifier;
+//- (HZChatContentType) hz_chatCellContentTypeWithReuseIdentifier:(NSString *)reuseIdentifier;
 
 @optional
 
@@ -36,9 +27,12 @@ typedef NS_ENUM(NSUInteger, HZChatCellSide) {
 
 @end
 
+@class HZChatMessageModel;
 @interface HZChatBaseMessageTVCell : UITableViewCell
 
-@property (strong, nonatomic) UIButton *avatarButton;
+@property (weak, nonatomic) id <HZChatBaseMessageTVCellDelegate> hz_delegate;
+
+@property (strong, nonatomic) HZChatMessageModel *messageModel;
 
 @end
 

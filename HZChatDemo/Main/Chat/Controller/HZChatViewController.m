@@ -11,13 +11,14 @@
 #import "HZChatViewController+ChatTableView.h"
 #import "HZChatViewController+ChatInputView.h"
 #import "HZChatInputView.h"
+#import "HZChatTextMessageTVCell.h"
 
-@interface HZChatViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HZChatViewController ()<UITableViewDataSource, UITableViewDelegate, HZChatBaseMessageTVCellDelegate>
 
 @end
 
-static CGFloat const chatInputViewHeight = 50.0;
-static CGFloat const normalNAVIHeight = 64.0;
+static CGFloat const chatInputViewHeight    = 50.0;
+static CGFloat const normalNAVIHeight       = 64.0;
 
 @implementation HZChatViewController
 
@@ -113,6 +114,9 @@ static CGFloat const normalNAVIHeight = 64.0;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tableViewTapAction:)];
             [tableView addGestureRecognizer:tap];
             
+            [tableView registerClass:[HZChatTextMessageTVCell class] forCellReuseIdentifier:@"leftText"];
+            [tableView registerClass:[HZChatTextMessageTVCell class] forCellReuseIdentifier:@"rightText"];
+            
             tableView;
         });
     }
@@ -137,14 +141,24 @@ static CGFloat const normalNAVIHeight = 64.0;
     
     UITableViewCell *cell = nil;
     cell = ({
-        UITableViewCell *cell_c = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        if (!cell_c) {
-            cell_c = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        BOOL left = indexPath.row % 2;
+        HZChatTextMessageTVCell *cell_c = nil;
+        if (left) {
+            
+            cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftText"];
+            cell_c.hz_delegate = self;
+            
+        }else {
+            
+            cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightText"];
+            cell_c.hz_delegate = self;
         }
         
         NSString *fontString = self.dataSource[indexPath.row];
         
-        [cell_c.textLabel setText:fontString];
+        //[cell_c.textMessageLabel setText:fontString];
+        
+        [cell_c.textMessageLabel setText:@"21213133131;jfkljda;fj;dajf;ajf;dasjf;asjf;asjf;afj;da"];
         
         cell_c;
     });
@@ -158,6 +172,19 @@ static CGFloat const normalNAVIHeight = 64.0;
         _dataSource = [UIFont familyNames];
     }
     return _dataSource;
+}
+
+#pragma mark - hz chat cell delegate
+- (HZChatCellSide) hz_chatCellSideWithReuseIdentifier:(NSString *)reuseIdentifier {
+    
+    if ([reuseIdentifier isEqualToString:@"leftText"]) {
+        
+        return HZChatCellSideOtherSide;
+    }else if ([reuseIdentifier isEqualToString:@"rightText"]){
+        return HZChatCellSideMySide;
+    }
+    
+    return HZChatCellSideMySide;
 }
 
 /*
