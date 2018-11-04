@@ -29,7 +29,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 
         //计算安全距离
-        _safeMediaContentMarginToBorder = rightPadding + innerPadding + bubbleArrowWidth;
+        _safeMediaContentMarginToBorder = rightPadding + innerPadding + bubbleArrowWidth + avatarWidth;
         
         //设置UI
         [self setupUI1];
@@ -57,7 +57,9 @@
     
     [self.contentView addSubview:self.avatarButton];
     [self.contentView addSubview:self.dateLabel];
-    [self.contentView addSubview:self.mediaContentView];
+    [self.contentView addSubview:self.bubbleView];
+    
+    [self.bubbleView addSubview:self.mediaContentView];
 }
 
 - (void)updateConstraintsWithSide: (HZChatCellSide)side {
@@ -92,7 +94,12 @@
         make.width.equalTo(@(avatarWidth));
         make.height.equalTo(@(avatarHeight));
     }];
-
+    
+    [self.bubbleView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.mediaContentView).with.offset(-bubbleArrowWidth);
+        make.top.bottom.right.equalTo(weakSelf.mediaContentView);
+    }];
+    
     [self.mediaContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.avatarButton.mas_right).with.offset(innerPadding + bubbleArrowWidth);
         make.top.equalTo(weakSelf.avatarButton).with.offset(innerPadding);
@@ -117,8 +124,13 @@
         make.height.equalTo(@(avatarHeight));
     }];
     
+    [self.bubbleView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(weakSelf.mediaContentView).with.offset(bubbleArrowWidth);
+        make.top.bottom.left.equalTo(weakSelf.mediaContentView);
+    }];
+    
     [self.mediaContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.avatarButton.mas_left).with.offset(innerPadding + bubbleArrowWidth);
+        make.right.equalTo(weakSelf.avatarButton.mas_left).with.offset(-(innerPadding + bubbleArrowWidth));
         make.top.equalTo(weakSelf.avatarButton).with.offset(innerPadding);
         make.left.greaterThanOrEqualTo(weakSelf.contentView).with.offset(weakSelf.safeMediaContentMarginToBorder);
         make.bottom.equalTo(weakSelf.contentView).with.offset(- bottomPadding);
@@ -131,6 +143,8 @@
     if (!_avatarButton) {
         _avatarButton = ({
             UIButton *button = [UIButton new];
+            
+            [button setBackgroundColor:[UIColor greenColor]];
             
             button;
         });
@@ -158,13 +172,40 @@
         
         _mediaContentView = ({
             UIView *view = [UIView new];
-            
+
             view;
         });
     }
     
     return _mediaContentView;
 }
+
+- (HZBubbleView *)bubbleView {
+    
+    if (!_bubbleView) {
+        
+        _bubbleView = ({
+            
+            HZBubbleView *view = [HZBubbleView new];
+            
+//            HZChatCellSide side = [self.hz_delegate hz_chatCellSideWithReuseIdentifier:self.reuseIdentifier];
+//
+//            view.chatCellSide = side;
+            
+            view;
+        });
+    }
+    
+    return _bubbleView;
+}
+
+- (void)setCellSide:(HZChatCellSide)cellSide {
+    
+    _cellSide = cellSide;
+    
+    self.bubbleView.chatCellSide = cellSide;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

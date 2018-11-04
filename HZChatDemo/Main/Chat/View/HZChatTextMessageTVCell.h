@@ -7,12 +7,16 @@
 //
 
 #import "HZChatMessageTVCell.h"
+#import <YYText.h>
+#import <TTTAttributedLabel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HZChatTextMessageTVCell : HZChatMessageTVCell
 
-@property (strong, nonatomic) UILabel *textMessageLabel;
+//@property (strong, nonatomic) UILabel *textMessageLabel;
+
+@property (strong, nonatomic) TTTAttributedLabel *textMessageLabel;
 
 @end
 

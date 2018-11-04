@@ -8,6 +8,9 @@
 
 #import "HZChatTextMessageTVCell.h"
 #import <Masonry.h>
+#import "HZChatConstants.h"
+#import "HZChatMessageModel.h"
+#import "HZUIMacro.h"
 
 @implementation HZChatTextMessageTVCell
 
@@ -47,19 +50,42 @@
     [self.mediaContentView addSubview:self.textMessageLabel];
 }
 
-- (UILabel *)textMessageLabel {
+- (TTTAttributedLabel *)textMessageLabel {
     
     if (!_textMessageLabel) {
         _textMessageLabel = ({
             
-            UILabel *label = [UILabel new];
+            TTTAttributedLabel *label = [TTTAttributedLabel new];
+            
+            //[label setBackgroundColor:[UIColor greenColor]];
+            [label setBackgroundColor:[UIColor clearColor]];
+            
             [label setNumberOfLines:0];
+            
+            [label setLineBreakMode:NSLineBreakByCharWrapping];
+            
+            [label setTextInsets:UIEdgeInsetsMake(textMarginToBorder, textMarginToBorder, textMarginToBorder, textMarginToBorder)];
+            
+            //[label setLayoutMargins:UIEdgeInsetsMake(textMarginToBorder, textMarginToBorder, textMarginToBorder, textMarginToBorder)];
             
             label;
         });
     }
     
     return _textMessageLabel;
+}
+
+- (void)setMessageModel:(HZChatMessageModel *)messageModel {
+    
+    [super setMessageModel:messageModel];
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:messageModel.message];
+    
+    text.yy_paragraphSpacing    = textParagraphSpacing;
+    text.yy_lineSpacing         = textLineSpacing;
+    text.yy_font                = [UIFont systemFontOfSize:15];
+    
+    self.textMessageLabel.attributedText = text;
 }
 
 

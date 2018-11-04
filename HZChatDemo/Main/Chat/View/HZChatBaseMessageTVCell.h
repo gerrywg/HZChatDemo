@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HZChatEnum.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSUInteger, HZChatCellSide) {
-    HZChatCellSideMySide,
-    HZChatCellSideOtherSide
-};
 
 @protocol HZChatBaseMessageTVCellDelegate <NSObject>
 

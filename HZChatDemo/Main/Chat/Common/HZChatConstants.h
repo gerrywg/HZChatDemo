@@ -2,27 +2,31 @@
 //  HZChatConstants.h
 //  HZChatDemo
 //
-//  Created by Gang Wang on 2018/11/3.
+//  Created by Gang Wang on 2018/11/4.
 //  Copyright © 2018 o888. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
-
-#ifndef HZChatConstants_h
-#define HZChatConstants_h
-
 #import <UIKit/UIKit.h>
 
-CGFloat const leftPadding   = 8.0;
-CGFloat const topPadding    = 8.0;
-CGFloat const bottomPadding = 8.0;
-CGFloat const rightPadding  = leftPadding;
-CGFloat const innerPadding  = 8.0;
+extern CGFloat const leftPadding;
+extern CGFloat const topPadding;
+extern CGFloat const bottomPadding;
+extern CGFloat const rightPadding;
+extern CGFloat const innerPadding;
 
-CGFloat const avatarWidth   = 50;
-CGFloat const avatarHeight  = avatarWidth;
+extern CGFloat const avatarWidth;
+extern CGFloat const avatarHeight;
 
-CGFloat const bubbleArrowWidth  = 5.0;
-CGFloat const bubbleArrowHeight = 2 * bubbleArrowWidth;
+extern CGFloat const bubbleArrowWidth;
+extern CGFloat const bubbleArrowHeight;
 
-#endif /* HZChatConstants_h */
+extern CGFloat const textMarginToBorder;
+extern CGFloat const textLineSpacing;
+extern CGFloat const textParagraphSpacing;
+
+extern CGFloat const mediaViewCornerRadius;
+
+extern CGFloat const mediaArrowViewBorderWidth;
+extern CGFloat const mediaArrowViewCornerRadius;
+extern CGFloat const mediaArrowViewNeckHeight;
+

@@ -12,6 +12,10 @@
 #import "HZChatViewController+ChatInputView.h"
 #import "HZChatInputView.h"
 #import "HZChatTextMessageTVCell.h"
+#import "HZChatImageMessageTVCell.h"
+#import "HZChatMessageModel.h"
+#import "HZUIMacro.h"
+#import <SDWebImageDownloader.h>
 
 @interface HZChatViewController ()<UITableViewDataSource, UITableViewDelegate, HZChatBaseMessageTVCellDelegate>
 
@@ -108,14 +112,20 @@ static CGFloat const normalNAVIHeight       = 64.0;
             tableView.delegate = self;
             
             [tableView setBackgroundColor:[UIColor grayColor]];
-            
             [tableView setTableFooterView:[UIView new]];
+            [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+            
+            tableView.rowHeight             = UITableViewAutomaticDimension;
+            tableView.estimatedRowHeight    = 44;
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tableViewTapAction:)];
             [tableView addGestureRecognizer:tap];
             
             [tableView registerClass:[HZChatTextMessageTVCell class] forCellReuseIdentifier:@"leftText"];
             [tableView registerClass:[HZChatTextMessageTVCell class] forCellReuseIdentifier:@"rightText"];
+            
+            [tableView registerClass:[HZChatImageMessageTVCell class] forCellReuseIdentifier:@"leftImage"];
+            [tableView registerClass:[HZChatImageMessageTVCell class] forCellReuseIdentifier:@"righImage"];
             
             tableView;
         });
@@ -134,7 +144,8 @@ static CGFloat const normalNAVIHeight       = 64.0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    //return self.dataSource.count;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,6 +153,9 @@ static CGFloat const normalNAVIHeight       = 64.0;
     UITableViewCell *cell = nil;
     cell = ({
         BOOL left = indexPath.row % 2;
+        
+        
+#if 0
         HZChatTextMessageTVCell *cell_c = nil;
         if (left) {
             
@@ -153,12 +167,44 @@ static CGFloat const normalNAVIHeight       = 64.0;
             cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightText"];
             cell_c.hz_delegate = self;
         }
+#endif
+        
+        HZChatImageMessageTVCell *cell_c = nil;
+        if (left) {
+            
+            cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftImage"];
+            
+            if (!cell_c) {
+                cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"leftImage"];
+            }
+            
+            cell_c.hz_delegate = self;
+            
+        }else {
+            
+            cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightImage"];
+            if (!cell_c) {
+                cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"rightImage"];
+            }
+            cell_c.hz_delegate = self;
+        }
+        
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         NSString *fontString = self.dataSource[indexPath.row];
         
         //[cell_c.textMessageLabel setText:fontString];
+#if 0
+        HZChatMessageModel *model = [[HZChatMessageModel alloc]init];
+        model.message = @"21213133131;jfkljda;fj;dajf;iofuwoijfdajfdasjf;asjf;asjf;afj;dajas;lurt043uqlkjd;lgkje489543lkjfgkldasfoiudsafewlakjf;dsaj;j;3240-";
+        //[cell_c.textMessageLabel setText:model.message];
+#endif
         
-        [cell_c.textMessageLabel setText:@"21213133131;jfkljda;fj;dajf;ajf;dasjf;asjf;asjf;afj;da"];
+        HZChatMessageModel *model = self.dataSource[indexPath.row];
+        cell_c.messageModel = model;
+        
+
         
         cell_c;
     });
@@ -169,9 +215,76 @@ static CGFloat const normalNAVIHeight       = 64.0;
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = [UIFont familyNames];
+        //_dataSource = [UIFont familyNames];
+        
+        NSMutableArray *arr = [NSMutableArray array];
+        
+        for (int i = 0; i<10; i++) {
+            HZChatMessageModel *model = [[HZChatMessageModel alloc]init];
+            model.messageId = @(i);
+            
+            BOOL result = i%2;
+            
+            if (result) {
+                model.mediaContentDict = @{@"imageURL":IMAGE_URL1};
+            }else{
+                model.mediaContentDict = @{@"imageURL":IMAGE_URL2};
+            }
+            
+                    __weak typeof (self) weakSelf = self;
+            
+                    if (!model.hz_userInfo) {
+            
+                        NSURL *url = [NSURL URLWithString:model.mediaContentDict[@"imageURL"]];
+            
+                        [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:url options:SDWebImageDownloaderUseNSURLCache progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            
+                        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+            
+                            model.hz_userInfo = @{@"imageWidth":@(image.size.width),
+                                                  @"imageHeight":@(image.size.height),
+                                                  @"image":image
+                                                  };
+                            [weakSelf reloadDataForMessage:model];
+                        }];
+                    }
+            
+            [arr addObject:model];
+            
+        }
+        
+        _dataSource = [arr copy];
     }
     return _dataSource;
+}
+
+- (void)reloadDataForMessage:(HZChatMessageModel *)model {
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.tableView reloadData];
+//    });
+//
+//
+//
+//    return;
+    
+    NSInteger index = 0;
+    BOOL find = NO;
+    for (HZChatMessageModel *model1 in self.dataSource) {
+        if ([model1.messageId isEqualToNumber:model.messageId]) {
+            
+            find = YES;
+            break;
+        }
+        
+        index += 1;
+    }
+    
+    if (find) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 #pragma mark - hz chat cell delegate
@@ -180,7 +293,17 @@ static CGFloat const normalNAVIHeight       = 64.0;
     if ([reuseIdentifier isEqualToString:@"leftText"]) {
         
         return HZChatCellSideOtherSide;
-    }else if ([reuseIdentifier isEqualToString:@"rightText"]){
+    }
+    
+    else if ([reuseIdentifier isEqualToString:@"rightText"]){
+        return HZChatCellSideMySide;
+    }
+    
+    else if ([reuseIdentifier isEqualToString:@"leftImage"]){
+        return HZChatCellSideOtherSide;
+    }
+    
+    else if ([reuseIdentifier isEqualToString:@"rightImage"]){
         return HZChatCellSideMySide;
     }
     

@@ -8,5 +8,8 @@ target 'HZChatDemo' do
   # Pods for HZChatDemo
 pod 'Masonry'
 pod 'YYModel'
+pod 'YYText'
+pod 'TTTAttributedLabel'
+pod 'SDWebImage'
   
 end

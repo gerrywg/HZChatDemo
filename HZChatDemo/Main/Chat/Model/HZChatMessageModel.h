@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, HZChatContentType) {
 @property (copy, nonatomic) NSString            *message;
 @property (assign, nonatomic) HZChatContentType *contentType;
 @property (strong, nonatomic) NSDictionary      *mediaContentDict;
+@property (strong, nonatomic) NSDictionary      *hz_userInfo;
 
 @property (copy, nonatomic) NSString *senderId;
 @property (copy, nonatomic) NSString *senderHeadImageURLString;
