@@ -12,5 +12,6 @@ pod 'YYText'
 pod 'TTTAttributedLabel'
 pod 'SDWebImage'
 pod 'Toast', '~> 4.0.0'
+pod 'TJLImagePicker'
   
 end

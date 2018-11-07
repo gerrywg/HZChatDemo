@@ -19,6 +19,11 @@
 		573972F4219148C9003C374A /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 573972F2219148C9003C374A /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		578573E621928FED0058847F /* HZChatViewController+SendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573E521928FED0058847F /* HZChatViewController+SendMessage.m */; };
 		578573E921929A620058847F /* HZChatViewController+ReceiveMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573E821929A620058847F /* HZChatViewController+ReceiveMessage.m */; };
+		578573EE2192EF510058847F /* HZDateChatAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573EA2192EF510058847F /* HZDateChatAccessoryView.m */; };
+		578573EF2192EF510058847F /* HZDateChatBelowCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573ED2192EF510058847F /* HZDateChatBelowCVCell.m */; };
+		578573F32192F5B90058847F /* JXLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573F22192F5B90058847F /* JXLayoutButton.m */; };
+		578573F72192F9570058847F /* UIViewController+HZJSExtentsion.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573F62192F9570058847F /* UIViewController+HZJSExtentsion.m */; };
+		578573FD2192FD520058847F /* HZChatViewController+SendImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 578573FC2192FD520058847F /* HZChatViewController+SendImage.m */; };
 		57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */; };
 		57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E87E80218AB1BA00AA6FEB /* ViewController.m */; };
 		57E87E84218AB1BA00AA6FEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E87E82218AB1BA00AA6FEB /* Main.storyboard */; };
@@ -63,6 +68,16 @@
 		578573E521928FED0058847F /* HZChatViewController+SendMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+SendMessage.m"; sourceTree = "<group>"; };
 		578573E721929A620058847F /* HZChatViewController+ReceiveMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+ReceiveMessage.h"; sourceTree = "<group>"; };
 		578573E821929A620058847F /* HZChatViewController+ReceiveMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+ReceiveMessage.m"; sourceTree = "<group>"; };
+		578573EA2192EF510058847F /* HZDateChatAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZDateChatAccessoryView.m; sourceTree = "<group>"; };
+		578573EB2192EF510058847F /* HZDateChatAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZDateChatAccessoryView.h; sourceTree = "<group>"; };
+		578573EC2192EF510058847F /* HZDateChatBelowCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZDateChatBelowCVCell.h; sourceTree = "<group>"; };
+		578573ED2192EF510058847F /* HZDateChatBelowCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZDateChatBelowCVCell.m; sourceTree = "<group>"; };
+		578573F12192F5B90058847F /* JXLayoutButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLayoutButton.h; sourceTree = "<group>"; };
+		578573F22192F5B90058847F /* JXLayoutButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLayoutButton.m; sourceTree = "<group>"; };
+		578573F52192F9570058847F /* UIViewController+HZJSExtentsion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HZJSExtentsion.h"; sourceTree = "<group>"; };
+		578573F62192F9570058847F /* UIViewController+HZJSExtentsion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HZJSExtentsion.m"; sourceTree = "<group>"; };
+		578573FB2192FD520058847F /* HZChatViewController+SendImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZChatViewController+SendImage.h"; sourceTree = "<group>"; };
+		578573FC2192FD520058847F /* HZChatViewController+SendImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZChatViewController+SendImage.m"; sourceTree = "<group>"; };
 		57E87E79218AB1BA00AA6FEB /* HZChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E87E7C218AB1BA00AA6FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57E87E7D218AB1BA00AA6FEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +162,7 @@
 		573972F0219148AC003C374A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				578573F02192F5A40058847F /* JXLayoutButton */,
 				573972F1219148C9003C374A /* OpenUDID */,
 			);
 			path = Vendor;
@@ -159,6 +175,24 @@
 				573972F3219148C9003C374A /* OpenUDID.h */,
 			);
 			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		578573F02192F5A40058847F /* JXLayoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				578573F12192F5B90058847F /* JXLayoutButton.h */,
+				578573F22192F5B90058847F /* JXLayoutButton.m */,
+			);
+			path = JXLayoutButton;
+			sourceTree = "<group>";
+		};
+		578573F42192F93B0058847F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				578573F52192F9570058847F /* UIViewController+HZJSExtentsion.h */,
+				578573F62192F9570058847F /* UIViewController+HZJSExtentsion.m */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		57E87E70218AB1BA00AA6FEB = {
@@ -182,6 +216,7 @@
 		57E87E7B218AB1BA00AA6FEB /* HZChatDemo */ = {
 			isa = PBXGroup;
 			children = (
+				578573F42192F93B0058847F /* Components */,
 				573972F0219148AC003C374A /* Vendor */,
 				2332518B218DEEE7008BFF68 /* Macros */,
 				5731E0CC218C405D00C8CCB5 /* Managers */,
@@ -244,6 +279,8 @@
 				578573E521928FED0058847F /* HZChatViewController+SendMessage.m */,
 				578573E721929A620058847F /* HZChatViewController+ReceiveMessage.h */,
 				578573E821929A620058847F /* HZChatViewController+ReceiveMessage.m */,
+				578573FB2192FD520058847F /* HZChatViewController+SendImage.h */,
+				578573FC2192FD520058847F /* HZChatViewController+SendImage.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +298,10 @@
 				23AEC15C218DFDF2001D48EA /* HZChatTextMessageTVCell.m */,
 				5731E0D0218C434300C8CCB5 /* HZChatBaseMessageTVCell.h */,
 				5731E0D1218C434300C8CCB5 /* HZChatBaseMessageTVCell.m */,
+				578573EB2192EF510058847F /* HZDateChatAccessoryView.h */,
+				578573EA2192EF510058847F /* HZDateChatAccessoryView.m */,
+				578573EC2192EF510058847F /* HZDateChatBelowCVCell.h */,
+				578573ED2192EF510058847F /* HZDateChatBelowCVCell.m */,
 				23FA56C5218EA86A0015121E /* HZBubbleView.h */,
 				23FA56C6218EA86A0015121E /* HZBubbleView.m */,
 			);
@@ -286,6 +327,7 @@
 				57E87E75218AB1BA00AA6FEB /* Sources */,
 				57E87E76218AB1BA00AA6FEB /* Frameworks */,
 				57E87E77218AB1BA00AA6FEB /* Resources */,
+				F35E4AAF199B58D00F078106 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -361,6 +403,96 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F35E4AAF199B58D00F078106 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HZChatDemo/Pods-HZChatDemo-resources.sh",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/bgImage_HL@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/black_circle.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/black_circle@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/black_circle@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/blank.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/blank@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/blank@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/button.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/button@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/button@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/cancel.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/cancel@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/cancel@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/cellLine@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/change_direction.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/change_direction@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/change_direction@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/green.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/green@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/green@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/grey.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/grey@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/grey@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/more.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/more@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/more@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/pull_down.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/pull_down@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/pull_down@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/team_red_check.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/team_red_check@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/team_red_check@3x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/TJLAlbumCell.xib",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/TJLGridCollectionCell.xib",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/white_circle.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/white_circle@2x.png",
+				"${PODS_ROOT}/TJLImagePicker/TJLImagePicker/Resources/white_circle@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bgImage_HL@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/black_circle.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/black_circle@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/black_circle@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blank.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blank@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blank@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/button.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/button@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cancel.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cancel@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cancel@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cellLine@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/change_direction.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/change_direction@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/change_direction@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/green.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/green@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/green@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/grey.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/grey@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/grey@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/more.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/more@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/more@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pull_down.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pull_down@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pull_down@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/team_red_check.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/team_red_check@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/team_red_check@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TJLAlbumCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TJLGridCollectionCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/white_circle.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/white_circle@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/white_circle@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HZChatDemo/Pods-HZChatDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -368,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578573EF2192EF510058847F /* HZDateChatBelowCVCell.m in Sources */,
 				57E87E81218AB1BA00AA6FEB /* ViewController.m in Sources */,
 				5731E0D2218C434300C8CCB5 /* HZChatBaseMessageTVCell.m in Sources */,
 				237C4366218B5723004DD42F /* HZChatViewController+ChatInputView.m in Sources */,
@@ -379,6 +512,7 @@
 				578573E921929A620058847F /* HZChatViewController+ReceiveMessage.m in Sources */,
 				23AEC15D218DFDF2001D48EA /* HZChatTextMessageTVCell.m in Sources */,
 				5731E0C8218C32C400C8CCB5 /* HZChatMessageTVCell.m in Sources */,
+				578573FD2192FD520058847F /* HZChatViewController+SendImage.m in Sources */,
 				57E87EA0218AD82400AA6FEB /* HZChatInputView.m in Sources */,
 				5731E0CF218C41A200C8CCB5 /* HZChatManager.m in Sources */,
 				57E87E7E218AB1BA00AA6FEB /* AppDelegate.m in Sources */,
@@ -387,7 +521,10 @@
 				23FA56C4218E90A30015121E /* HZChatConstants.m in Sources */,
 				57E87EA8218B095C00AA6FEB /* HZChatViewController+ChatTableView.m in Sources */,
 				57E87E9D218AD63500AA6FEB /* HZChatViewController.m in Sources */,
+				578573F72192F9570058847F /* UIViewController+HZJSExtentsion.m in Sources */,
+				578573F32192F5B90058847F /* JXLayoutButton.m in Sources */,
 				578573E621928FED0058847F /* HZChatViewController+SendMessage.m in Sources */,
+				578573EE2192EF510058847F /* HZDateChatAccessoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

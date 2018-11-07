@@ -55,18 +55,6 @@ static char hz_chatInputViewContentSizeRefrenceValueKey;
                                                     - CGRectGetMinY(weakSelf.chatInputView.frame)
                                                     + (contentSize.height - refrenceOldContentSize.height))];
         
-            
-#if 0
-        [weakSelf.chatInputView setFrame:CGRectMake(CGRectGetMinX(weakSelf.chatInputView.frame),
-                                                    CGRectGetMinY(weakSelf.chatInputView.frame)
-                                                    - (contentSize.height
-                                                       - oldContentSize.height),
-                                                    CGRectGetWidth(weakSelf.chatInputView.frame),
-                                                    CGRectGetMaxY(weakSelf.chatInputView.frame)
-                                                    - CGRectGetMinY(weakSelf.chatInputView.frame)
-                                                    + (contentSize.height - oldContentSize.height))];
-#endif
-        
         
         //保存参考值
         self.chatInputViewContentSizeRefrenceValue = [NSValue valueWithCGSize:contentSize];

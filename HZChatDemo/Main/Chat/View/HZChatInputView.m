@@ -19,7 +19,7 @@
 
 static CGFloat const chatInputViewBorderWidth   = 0.5;  //chat input view border width
 static CGFloat const textViewBorderWidth        = 1;    //text view border width
-static CGFloat const textViewCornerRadius       = 3;    //text view border width
+static CGFloat const textViewCornerRadius       = 5;    //text view border width
 
 static CGFloat const leftPadding    = 8.0;
 static CGFloat const rightPadding   = 8.0;
@@ -114,7 +114,8 @@ static CGFloat const buttonHeight   = 28.0;
             textView.layer.borderColor  = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
             textView.layer.cornerRadius = textViewCornerRadius;
             
-            [textView setBackgroundColor:[UIColor greenColor]];
+            //[textView setBackgroundColor:[UIColor greenColor]];
+            [textView setBackgroundColor:[UIColor whiteColor]];
             
             [textView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
             

@@ -11,14 +11,19 @@
 #import "HZChatViewController+ChatTableView.h"
 #import "HZChatViewController+ChatInputView.h"
 #import "HZChatViewController+SendMessage.h"
+#import "HZChatViewController+SendImage.h"
 #import "HZChatInputView.h"
 #import "HZChatTextMessageTVCell.h"
 #import "HZChatImageMessageTVCell.h"
 #import "HZChatMessageModel.h"
 #import "HZUIMacro.h"
 #import <SDWebImageDownloader.h>
+#import "HZDateChatAccessoryView.h"
 
 @interface HZChatViewController ()<UITableViewDataSource, UITableViewDelegate, HZChatBaseMessageTVCellDelegate>
+
+@property (strong, nonatomic) HZDateChatAccessoryView *chatAccessoryView;
+@property (strong, nonatomic) NSArray *accessoryDataSource;
 
 @end
 
@@ -330,6 +335,123 @@ static CGFloat const normalNAVIHeight       = 64.0;
     }
     
     return HZChatCellSideMySide;
+}
+
+- (NSArray *)accessoryDataSource {
+    if (!_accessoryDataSource) {
+        _accessoryDataSource = ({
+            NSMutableArray *arr = [NSMutableArray array];
+            //NSArray *titles = @[@"相册",@"相机",@"语音"];
+            NSArray *titles = @[@"相册",@"相机"];
+            NSArray *imageNames = @[@"actionbar_picture_icon", @"actionbar_camera_icon",@"chat_Voice_small"];
+            NSArray *selectedImageNames = @[@"actionbar_picture_icon", @"actionbar_camera_icon",@"chat_Voice_click_small"];
+            
+            for (int i = 0; i<titles.count; i++) {
+                NSDictionary *dict = @{@"title":titles[i],
+                                       @"imageName":imageNames[i],
+                                       @"selectedImageName":selectedImageNames[i]
+                                       };
+                [arr addObject:dict];
+            }
+            
+            [arr copy];
+        });
+    }
+    return _accessoryDataSource;
+}
+
+#pragma mark -- Chat accessory view, 底部附件view
+- (HZDateChatAccessoryView *)chatAccessoryView {
+    if (!_chatAccessoryView) {
+        _chatAccessoryView = ({
+            HZDateChatAccessoryView *chatAccessoryView = [HZDateChatAccessoryView new];
+            chatAccessoryView.accesoryDataSource = self.accessoryDataSource;
+            __weak typeof (self) weakSelf = self;
+            [chatAccessoryView setUserDidClickedItem:^(NSIndexPath *accessoryViewIndexPath) {
+                switch (accessoryViewIndexPath.row) {
+                    case 0:
+                        //相册
+                    {
+                        //选中,跳转到相册界面
+                        [weakSelf userDidClickedPhotoAblumItem];
+                        
+                        //UI 操作
+                        [weakSelf hideChatAccessoryViewAnimated];
+                    }
+                        
+                        break;
+                    case 1:
+                        //相机
+                    {
+                        //选中,跳转到相机界面
+                        [weakSelf userDidClickedCamearaItem];
+                        
+                        //UI 操作
+                        [weakSelf hideChatAccessoryViewAnimated];
+                    }
+                        
+                        break;
+                    case 2:
+                        //语音
+                    {
+                        //UI 操作
+                        //[self hideChatAccessoryViewAnimated];
+                        
+                        //选中,跳转到地址选择界面
+                        //[weakSelf showVoiceRecordView];
+                    }
+                        
+                        break;
+                        
+                    default:
+                        break;
+                }
+            }];
+            
+            chatAccessoryView;
+        });
+    }
+    return _chatAccessoryView;
+}
+
+
+- (void)showChatAccessoryViewAnimated {
+#if 0
+    if (self.isAccessoryViewShow) {
+        return;
+    }
+    
+    self.isAccessoryViewShow = YES;
+    [self.view endEditing:YES];
+    
+    //交换位置, 把要显示的view放在最前面
+    NSInteger accIndex = 0;
+    NSInteger daiyIndex = 0;
+    for (int i = 0; i<self.view.subviews.count; i++) {
+        UIView *view = self.view.subviews[i];
+        if ([view isKindOfClass:[HZDateChatAccessoryView class]]) {
+            accIndex = i;
+        }else if ([view isKindOfClass:[HZDateChatDailyWordsView class]]){
+            daiyIndex = i;
+        }
+    }
+    
+    if (accIndex<daiyIndex) {
+        [self.view exchangeSubviewAtIndex:accIndex withSubviewAtIndex:daiyIndex];
+    }
+#endif
+    
+    
+    CGFloat height = CGRectGetMaxY(self.view.frame) - CGRectGetMinY(self.chatAccessoryView.frame);
+    //[self chatInputViewChangePostion:-height animatedDuration:KeyboardAnimationDuration animatedOption:7 scrollToIndexPath:nil needToScroll:NO];
+    
+}
+
+- (void)hideChatAccessoryViewAnimated {
+    //self.isAccessoryViewShow = NO;
+    
+    //[self chatInputViewChangePostion:0 animatedDuration:KeyboardAnimationDuration animatedOption:7 scrollToIndexPath:nil needToScroll:NO];
+    
 }
 
 /*

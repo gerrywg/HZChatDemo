@@ -47,6 +47,11 @@ THE SOFTWARE.
 
 
 
+## TJLImagePicker
+
+开源证书协议
+
+
 ## TTTAttributedLabel
 
 Copyright (c) 2011 Mattt Thompson (http://mattt.me/)

@@ -3,6 +3,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - TJLImagePicker (0.3.0)
   - Toast (4.0.0)
   - TTTAttributedLabel (2.0.0)
   - YYModel (1.0.4)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Masonry
   - SDWebImage
+  - TJLImagePicker
   - Toast (~> 4.0.0)
   - TTTAttributedLabel
   - YYModel
@@ -20,6 +22,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
     - SDWebImage
+    - TJLImagePicker
     - Toast
     - TTTAttributedLabel
     - YYModel
@@ -28,11 +31,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  TJLImagePicker: 70604a06fb0229641688f382edffe7a164f4795a
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 53fde07a36f146c3c2151617db33a2f4c5da7b9c
+PODFILE CHECKSUM: 49d03fb56c1c4b28cd4a29b5c20c7a8713c98869
 
 COCOAPODS: 1.5.0

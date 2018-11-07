@@ -28,5 +28,5 @@ CGFloat const mediaViewCornerRadius = 5.0;
 
 CGFloat const mediaArrowViewBorderWidth  = 0.5;
 CGFloat const mediaArrowViewCornerRadius = 5.0;
-CGFloat const mediaArrowViewNeckHeight   = 8.0;
+CGFloat const mediaArrowViewNeckHeight   = 7.0;
 
