@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A60E1D684012073CBD1AF4A5A8DEECAC"
-               BlueprintName = "Pods-HZChatDemo"
+               BlueprintIdentifier = "DF5E09C7FD9530356D1678286016A011"
+               BlueprintName = "TTTAttributedLabel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-HZChatDemo.a">
+               BuildableName = "libTTTAttributedLabel.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

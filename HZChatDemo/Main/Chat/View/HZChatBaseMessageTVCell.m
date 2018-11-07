@@ -19,6 +19,7 @@
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        [self setBackgroundColor:[UIColor clearColor]];
     }
     
     return self;

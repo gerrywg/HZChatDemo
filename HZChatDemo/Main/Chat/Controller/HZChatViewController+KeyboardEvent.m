@@ -70,8 +70,8 @@
     
     __weak typeof (self) weakSelf = self;
     
-    CGFloat transFormY = weakSelf.tableView.transform.ty + (CGRectGetMinY(keyboardFrame) - CGRectGetMinY(beginKeyboardFrame));
-    
+    CGFloat transFormY          = weakSelf.tableView.transform.ty + (CGRectGetMinY(keyboardFrame) - CGRectGetMinY(beginKeyboardFrame));
+    CGFloat contentInsetChangeY = CGRectGetMinY(keyboardFrame) - CGRectGetMinY(beginKeyboardFrame);
     
     [UIView animateWithDuration:duration delay:0 options:animation animations:^{
         
@@ -91,12 +91,14 @@
                                                         CGRectGetHeight(weakSelf.chatInputView.frame))];
         }
         
-        //调整table view positon
-        [weakSelf.tableView setTransform:CGAffineTransformMakeTranslation(0, transFormY)];
-        
-    } completion:^(BOOL finished) {
+        //调整table view positon, 此处conteng inset必须放在这里, 不然会有跳动
         UIEdgeInsets insets = weakSelf.tableView.contentInset;
-        [weakSelf.tableView setContentInset:UIEdgeInsetsMake(insets.top - transFormY, insets.left, insets.bottom, insets.right)];
+        [weakSelf.tableView setContentInset:UIEdgeInsetsMake(insets.top - contentInsetChangeY, insets.left, insets.bottom, insets.right)];
+        [weakSelf.tableView setTransform:CGAffineTransformMakeTranslation(0, transFormY)];
+
+    } completion:^(BOOL finished) {
+        
+        
     }];
 }
 

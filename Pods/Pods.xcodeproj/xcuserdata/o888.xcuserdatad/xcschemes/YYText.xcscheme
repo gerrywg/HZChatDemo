@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A60E1D684012073CBD1AF4A5A8DEECAC"
-               BlueprintName = "Pods-HZChatDemo"
+               BlueprintIdentifier = "A180E53FAB803445060E9DE842244E5B"
+               BlueprintName = "YYText"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-HZChatDemo.a">
+               BuildableName = "libYYText.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

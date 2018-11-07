@@ -10,6 +10,7 @@
 #import "HZChatViewController+KeyboardEvent.h"
 #import "HZChatViewController+ChatTableView.h"
 #import "HZChatViewController+ChatInputView.h"
+#import "HZChatViewController+SendMessage.h"
 #import "HZChatInputView.h"
 #import "HZChatTextMessageTVCell.h"
 #import "HZChatImageMessageTVCell.h"
@@ -61,6 +62,15 @@ static CGFloat const normalNAVIHeight       = 64.0;
     [self.tableView setFrame:CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMinY(self.view.frame) + normalNAVIHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - (normalNAVIHeight + chatInputViewHeight))];
     
     [self.chatInputView setFrame:CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMaxY(self.view.frame) - chatInputViewHeight, CGRectGetWidth(self.view.frame), chatInputViewHeight)];
+    
+    if (@available(iOS 11.0, *)) {
+        [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    [self.tableView setContentInset:UIEdgeInsetsZero];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -97,6 +107,14 @@ static CGFloat const normalNAVIHeight       = 64.0;
                 [weakSelf updateUIForChatInputViewTextViewChanged:contentSize oldContentSize:oldContentSize];
             }];
             
+            [chatInputView setChatInputViewSendKeyClicked:^(UITextView * _Nonnull textView) {
+               
+                [weakSelf sendTextMessage:textView];
+                
+                //clear text view
+                textView.text = nil;
+            }];
+            
             chatInputView;
         });
     }
@@ -111,7 +129,7 @@ static CGFloat const normalNAVIHeight       = 64.0;
             tableView.dataSource = self;
             tableView.delegate = self;
             
-            [tableView setBackgroundColor:[UIColor grayColor]];
+            [tableView setBackgroundColor:[UIColor colorWithRed:0xf0/255.0 green:0xf0/255.0 blue:0xf0/255.0 alpha:1.0]];
             [tableView setTableFooterView:[UIView new]];
             [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
             
@@ -145,69 +163,72 @@ static CGFloat const normalNAVIHeight       = 64.0;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //return self.dataSource.count;
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = nil;
-    cell = ({
-        BOOL left = indexPath.row % 2;
-        
-        
-#if 0
-        HZChatTextMessageTVCell *cell_c = nil;
-        if (left) {
-            
-            cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftText"];
-            cell_c.hz_delegate = self;
-            
-        }else {
-            
-            cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightText"];
-            cell_c.hz_delegate = self;
-        }
-#endif
-        
-        HZChatImageMessageTVCell *cell_c = nil;
-        if (left) {
-            
-            cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftImage"];
-            
-            if (!cell_c) {
-                cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"leftImage"];
+    
+    BOOL left = indexPath.row % 2;
+    
+    HZChatMessageModel *messageModel = self.dataSource[indexPath.row];
+    
+    switch (messageModel.contentType) {
+        case HZChatContentTypeText:
+        cell = ({
+            HZChatTextMessageTVCell *cell_c = nil;
+            if (left) {
+                
+                cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftText"];
+                cell_c.hz_delegate = self;
+                
+            }else {
+                
+                cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightText"];
+                cell_c.hz_delegate = self;
             }
             
-            cell_c.hz_delegate = self;
+            cell_c.selectionStyle = UITableViewCellSelectionStyleNone;
             
-        }else {
+            cell_c.messageModel = messageModel;
             
-            cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightImage"];
-            if (!cell_c) {
-                cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"rightImage"];
-            }
-            cell_c.hz_delegate = self;
-        }
-        
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        NSString *fontString = self.dataSource[indexPath.row];
-        
-        //[cell_c.textMessageLabel setText:fontString];
-#if 0
-        HZChatMessageModel *model = [[HZChatMessageModel alloc]init];
-        model.message = @"21213133131;jfkljda;fj;dajf;iofuwoijfdajfdasjf;asjf;asjf;afj;dajas;lurt043uqlkjd;lgkje489543lkjfgkldasfoiudsafewlakjf;dsaj;j;3240-";
-        //[cell_c.textMessageLabel setText:model.message];
-#endif
-        
-        HZChatMessageModel *model = self.dataSource[indexPath.row];
-        cell_c.messageModel = model;
-        
-
-        
-        cell_c;
-    });
+            cell_c;
+        });
+            break;
+        case HZChatContentTypeImage:
+            cell = ({
+                HZChatImageMessageTVCell *cell_c = nil;
+                if (left) {
+                    
+                    cell_c = [tableView dequeueReusableCellWithIdentifier:@"leftImage"];
+                    
+                    if (!cell_c) {
+                        cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"leftImage"];
+                    }
+                    
+                    cell_c.hz_delegate = self;
+                    
+                }else {
+                    
+                    cell_c = [tableView dequeueReusableCellWithIdentifier:@"rightImage"];
+                    if (!cell_c) {
+                        cell_c = [[HZChatImageMessageTVCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"rightImage"];
+                    }
+                    cell_c.hz_delegate = self;
+                }
+                
+                cell_c.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                cell_c.messageModel = messageModel;
+                
+                cell_c;
+            });
+            break;
+            
+        default:
+            break;
+    }
     
     return cell;
 }
@@ -218,7 +239,7 @@ static CGFloat const normalNAVIHeight       = 64.0;
         //_dataSource = [UIFont familyNames];
         
         NSMutableArray *arr = [NSMutableArray array];
-        
+#if 0
         for (int i = 0; i<10; i++) {
             HZChatMessageModel *model = [[HZChatMessageModel alloc]init];
             model.messageId = @(i);
@@ -252,6 +273,7 @@ static CGFloat const normalNAVIHeight       = 64.0;
             [arr addObject:model];
             
         }
+#endif
         
         _dataSource = [arr copy];
     }

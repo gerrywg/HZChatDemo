@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HZChatViewController.h"
+#import "OpenUDID.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 
 - (IBAction)buttonClicked:(id)sender {
     
+    NSLog(@"--%@",[OpenUDID value]);
+//    
+//    return;
     HZChatViewController *vc = [HZChatViewController new];
     
     [self.navigationController pushViewController:vc animated:YES];

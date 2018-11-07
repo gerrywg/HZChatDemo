@@ -16,6 +16,8 @@
     
     if (self = [super initWithFrame:frame]) {
         
+        [self setContentMode:UIViewContentModeRedraw];
+        
         self.chatArrowBorderColor = WECHAT_MEDIAVIEW_BORDER_COLOR;
         self.chatArrowBorderWidth = mediaArrowViewBorderWidth;
         
@@ -69,8 +71,8 @@
             }
             
             CGPathMoveToPoint(path, NULL, arrowWidth, arrowHeight + viewCornerRaidus + viewNeckHeight);
-            CGPathAddLineToPoint(path, NULL, 0, viewCornerRaidus + mediaArrowViewNeckHeight + arrowHeight/2.0);
-            CGPathAddLineToPoint(path, NULL, arrowWidth, viewCornerRaidus + mediaArrowViewNeckHeight);
+            CGPathAddLineToPoint(path, NULL, 0, viewCornerRaidus + viewNeckHeight + arrowHeight/2.0);
+            CGPathAddLineToPoint(path, NULL, arrowWidth, viewCornerRaidus + viewNeckHeight);
             CGPathAddLineToPoint(path, NULL, arrowWidth, viewCornerRaidus);
             CGPathAddArcToPoint(path, NULL, arrowWidth, 0, arrowWidth + viewCornerRaidus, 0, arrowWidth);
             CGPathAddLineToPoint(path, NULL, viewWidth - viewCornerRaidus, 0);
@@ -79,7 +81,6 @@
             CGPathAddArcToPoint(path, NULL, viewWidth, viewHeight, viewWidth - viewCornerRaidus, viewHeight, viewCornerRaidus);
             CGPathAddLineToPoint(path, NULL, arrowWidth + viewCornerRaidus, viewHeight);
             CGPathAddArcToPoint(path, NULL, arrowWidth, viewHeight, arrowWidth, viewHeight - viewCornerRaidus, viewCornerRaidus);
-            CGPathAddLineToPoint(path, NULL, arrowWidth, viewHeight - (viewCornerRaidus + arrowHeight + viewNeckHeight));
         }
             break;
         case HZChatCellSideMySide:
@@ -92,17 +93,16 @@
             }
             
             CGPathMoveToPoint(path, NULL, viewWidth - arrowWidth, arrowHeight + viewCornerRaidus + viewNeckHeight);
-            CGPathAddLineToPoint(path, NULL, viewWidth, viewCornerRaidus + mediaArrowViewNeckHeight + arrowHeight/2.0);
-            CGPathAddLineToPoint(path, NULL, viewWidth - arrowWidth, viewCornerRaidus + mediaArrowViewNeckHeight);
+            CGPathAddLineToPoint(path, NULL, viewWidth, viewCornerRaidus + viewNeckHeight + arrowHeight/2.0);
+            CGPathAddLineToPoint(path, NULL, viewWidth - arrowWidth, viewCornerRaidus + viewNeckHeight);
             CGPathAddLineToPoint(path, NULL, viewWidth - arrowWidth, viewCornerRaidus);
             CGPathAddArcToPoint(path, NULL, viewWidth - arrowWidth, 0, viewWidth - (arrowWidth + viewCornerRaidus), 0, arrowWidth);
             CGPathAddLineToPoint(path, NULL, viewCornerRaidus, 0);
             CGPathAddArcToPoint(path, NULL, 0, 0, 0, viewCornerRaidus, viewCornerRaidus);
             CGPathAddLineToPoint(path, NULL, 0, viewHeight - viewCornerRaidus);
             CGPathAddArcToPoint(path, NULL, 0, viewHeight, viewCornerRaidus, viewHeight, viewCornerRaidus);
-            CGPathAddLineToPoint(path, NULL, viewWidth - viewCornerRaidus, viewHeight);
+            CGPathAddLineToPoint(path, NULL, viewWidth - viewCornerRaidus - arrowWidth, viewHeight);
             CGPathAddArcToPoint(path, NULL, viewWidth - arrowWidth, viewHeight, viewWidth - arrowWidth, viewHeight - viewCornerRaidus, viewCornerRaidus);
-            CGPathAddLineToPoint(path, NULL, viewWidth - arrowWidth, viewHeight - (viewCornerRaidus + arrowHeight + viewNeckHeight));
         }
             break;
             

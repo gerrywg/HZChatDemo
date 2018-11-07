@@ -59,6 +59,7 @@ static CGFloat const buttonHeight   = 28.0;
     
     self.layer.borderWidth = chatInputViewBorderWidth;
     self.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:0.1].CGColor;
+    
 }
 
 + (BOOL)requiresConstraintBasedLayout {
@@ -116,6 +117,9 @@ static CGFloat const buttonHeight   = 28.0;
             [textView setBackgroundColor:[UIColor greenColor]];
             
             [textView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+            
+            textView.delegate = self;
+            [textView setReturnKeyType:UIReturnKeySend];
             
             textView;
         });
@@ -208,6 +212,24 @@ static CGFloat const buttonHeight   = 28.0;
             self.chatInputViewTextViewDidChangeContentSize(contentSize, oldContentSize);
         }
     }
+}
+
+#pragma mark - text view delegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]){ //判断输入的字是否是回车，即按下return
+        //在这里做你响应return键的代码
+        
+        if (self.chatInputViewSendKeyClicked) {
+            
+            self.chatInputViewSendKeyClicked(textView);
+        }
+        
+        return NO; //这里返回NO，就代表return键值失效，即页面上按下return，不会出现换行，如果为yes，则输入页面会换行
+    }
+    
+    NSLog(@"textview.text:%@",textView.text);
+    
+    return YES;
 }
 
 

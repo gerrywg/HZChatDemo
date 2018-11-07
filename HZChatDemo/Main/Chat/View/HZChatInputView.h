@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HZChatInputView : UIView
 
 @property (copy, nonatomic) void (^chatInputViewTextViewDidChangeContentSize)(CGSize contentSize, CGSize oldContentSize);
+@property (copy, nonatomic) void (^chatInputViewSendKeyClicked)(UITextView *textView);
 
 @end
 
